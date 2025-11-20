@@ -1,0 +1,5 @@
+{
+  "name": "La Palabra Diaria",
+  "description": "Aplicación minimalista para acceder a las lecturas católicas del día (Primera lectura, Salmo, Segunda lectura y Evangelio) con una interfaz limpia y accesible.",
+  "requestFramePermissions": []
+}
