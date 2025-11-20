@@ -9,6 +9,8 @@ export enum Theme {
   Dark = 'dark'
 }
 
+export type LanguageCode = 'es' | 'en' | 'fr' | 'it' | 'de' | 'ko' | 'ja' | 'zh';
+
 export interface ReadingContent {
   title: string;
   reference: string;
