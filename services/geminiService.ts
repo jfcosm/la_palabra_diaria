@@ -52,6 +52,7 @@ export const fetchDailyReadings = async (date: Date, language: LanguageCode): Pr
   const prompt = `Genera las lecturas de la misa católica para el día: ${dateString}.
   
   IMPORTANTE: Todo el contenido debe estar traducido perfectamente al idioma: ${langName}.
+  FORMATO: Texto plano. NO uses etiquetas HTML como <br>. Usa caracteres de salto de línea (\\n) para separar párrafos.
   
   Devuelve estrictamente el título, referencia bíblica y el texto completo de:
   1. Primera Lectura
@@ -117,7 +118,7 @@ export const fetchDailyReadings = async (date: Date, language: LanguageCode): Pr
             description: "Reflexión pastoral u homilía basada en las lecturas",
             properties: {
               title: { type: Type.STRING, description: "Un título inspirador para la reflexión" },
-              text: { type: Type.STRING, description: "El cuerpo del texto de la reflexión" }
+              text: { type: Type.STRING, description: "El cuerpo del texto de la reflexión. Usa \\n para párrafos, no HTML." }
             }
           }
         },

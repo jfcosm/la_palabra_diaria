@@ -548,7 +548,7 @@ const App: React.FC = () => {
                   {/* EXPAND BUTTON */}
                   <button 
                     onClick={() => setShowReadings(!showReadings)}
-                    className="w-full max-w-md mx-auto group relative flex items-center justify-center gap-3 bg-indigo-700 hover:bg-indigo-800 dark:bg-indigo-600 dark:hover:bg-indigo-500 text-white py-4 px-8 rounded-full font-bold text-lg shadow-lg shadow-indigo-700/20 hover:shadow-indigo-700/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 border border-transparent"
+                    className="w-full max-w-md mx-auto group relative flex items-center justify-center gap-3 bg-indigo-700 hover:bg-indigo-800 dark:bg-indigo-600 dark:hover:bg-indigo-50 text-white py-4 px-8 rounded-full font-bold text-lg shadow-lg shadow-indigo-700/20 hover:shadow-indigo-700/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 border border-transparent"
                   >
                     <span>{showReadings ? t.readingsButtonHide : t.readingsButtonShow}</span>
                     {showReadings ? <ChevronUpIcon className="w-5 h-5" /> : <ChevronDownIcon className="w-5 h-5" />}
@@ -579,8 +579,8 @@ const App: React.FC = () => {
                               <h3 className="text-xl md:text-2xl font-bold text-center text-stone-800 dark:text-stone-100 mb-6 font-serif">
                                 {readings.reflection.title}
                               </h3>
-                              <div className={`${textSize} leading-loose text-stone-700 dark:text-stone-300 font-serif text-justify opacity-90 italic`}>
-                                {readings.reflection.text}
+                              <div className={`${textSize} leading-loose text-stone-700 dark:text-stone-300 font-serif text-justify opacity-90 italic whitespace-pre-wrap`}>
+                                {readings.reflection.text.replace(/<br\s*\/?>/gi, '\n')}
                               </div>
                            </div>
                         </div>
